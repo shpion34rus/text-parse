@@ -5,10 +5,12 @@ import sqlalchemy
 from sqlalchemy import create_engine, VARCHAR
 from sqlalchemy import MetaData, Table, Column, Integer
 import psycopg2
+import urllib.request
 
 
 engine = create_engine('postgresql://postgres:qwerty@localhost:5432/parsertest')
 
+'''
 meta = MetaData()
 users_table = Table('uparser', meta,
     Column('id', Integer, primary_key=True),
@@ -22,11 +24,12 @@ users_table = Table('uparser', meta,
     Column('name', String(50))
     Column('name', String(50))
 )
+'''
 
-
-def reader():
+def reader(target_url):
     # pattern = r'(\S+) (\S+) (\S+) \[([^:]+):(\d+:\d+:\d+) ([^\]]+)\] \"(\S+) (.*?) (\S+)\" (\S+) (\S+) (\".*?\") (\".*?\")'
     pattern = r'(\S+) (\S+) (\S+) \[(.*?)\] \"(\S+) (.*?) (\S+)\" (\S+) (\S+) (\".*?\") (\".*?\")'
+    data = urllib.request.urlopen(target_url)
     file = open('C:\\access.log')
     for string in file:
         if string.__len__() < 5:
@@ -39,4 +42,4 @@ def reader():
 
 
 if __name__ == '__main__':
-    reader()
+    reader('http://www.almhuette-raith.at/apache-log/access.log')
