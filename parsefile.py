@@ -1,27 +1,24 @@
 import datetime
 import re
 import time
-import sqlalchemy
-from sqlalchemy import create_engine, VARCHAR
-from sqlalchemy import MetaData, Table, Column, Integer
-import psycopg2
 
 
-engine = create_engine('postgresql://postgres:qwerty@localhost:5432/parsertest')
 
-meta = MetaData()
-users_table = Table('uparser', meta,
-    Column('id', Integer, primary_key=True),
-    Column('ip', VARCHAR(20))
-    Column('dtimefield', )
-    Column('httpmethod', String(50))
-    Column('httppath', String(50))
-    Column('name', String(50))
-    Column('name', String(50))
-    Column('name', String(50))
-    Column('name', String(50))
-    Column('name', String(50))
-)
+# engine = create_engine('postgresql://postgres:qwerty@localhost:5432/parsertest')
+#
+# meta = MetaData()
+# users_table = Table('uparser', meta,
+#     Column('id', Integer, primary_key=True),
+#     Column('ip', VARCHAR(20))
+#     Column('dtimefield', )
+#     Column('httpmethod', String(50))
+#     Column('httppath', String(50))
+#     Column('name', String(50))
+#     Column('name', String(50))
+#     Column('name', String(50))
+#     Column('name', String(50))
+#     Column('name', String(50))
+# )
 
 
 def reader():
